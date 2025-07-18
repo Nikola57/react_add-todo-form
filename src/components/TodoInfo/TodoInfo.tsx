@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import { Post } from '../../typs/typs';
+import { Post } from '../../types/types';
 
 type Prop = { post: Post };
 

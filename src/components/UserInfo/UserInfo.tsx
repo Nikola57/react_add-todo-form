@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import usersFromServer from '../../api/users'; // Переконайтеся, що це шлях до ваших даних користувачів
 // import { getUserById } from '../../services/user'; // Функція для отримання користувача
-import { User } from '../../typs/typs'; // Ваш визначений тип Post та User
+import { User } from '../../types/types'; // Ваш визначений тип Post та User
 
 // Оновлений тип для даних, що передаються з UserInfo до батьківського компонента
 type NewTodoData = {

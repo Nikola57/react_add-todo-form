@@ -1,4 +1,4 @@
-import { Post } from '../../typs/typs';
+import { Post } from '../../types/types';
 import { TodoInfo } from '../TodoInfo/TodoInfo';
 
 type Props = {

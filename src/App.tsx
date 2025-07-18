@@ -5,7 +5,7 @@ import todosFromServer from './api/todos'; // Це початкові дані t
 import { TodoList } from './components/TodoList';
 import { UserInfo } from './components/UserInfo';
 import { getUserById } from './services/user'; // Функція для отримання користувача
-import { Post } from './typs/typs'; // Ваш визначений тип Post
+import { Post } from './types/types'; // Ваш визначений тип Post
 
 // Зверніть увагу: `initialTodos` створюється один раз під час завантаження модуля.
 const initialTodos: Post[] = todosFromServer.map(todo => ({

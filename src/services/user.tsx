@@ -1,0 +1,7 @@
+// src/services/user.ts
+import usersFromServer from '../api/users';
+import { User } from '../typs/typs';
+
+export function getUserById(userId: number): User | null {
+  return usersFromServer.find(user => user.id === userId) || null;
+}

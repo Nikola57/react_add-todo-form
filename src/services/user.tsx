@@ -1,4 +1,3 @@
-// src/services/user.ts
 import usersFromServer from '../api/users';
 import { User } from '../types/types';
 

@@ -1,30 +1,30 @@
 import { useState } from 'react';
 import './App.scss';
 
-import todosFromServer from './api/todos'; // Це початкові дані todo
+// import
+import todosFromServer from './api/todos';
 import { TodoList } from './components/TodoList';
 import { UserInfo } from './components/UserInfo';
-import { getUserById } from './services/user'; // Функція для отримання користувача
-import { Post } from './types/types'; // Ваш визначений тип Post
+import { getUserById } from './services/user';
+import { Post } from './types/types';
 
-// Зверніть увагу: `initialTodos` створюється один раз під час завантаження модуля.
+// constants
 const initialTodos: Post[] = todosFromServer.map(todo => ({
-  id: todo.id, // Додайте id сюди
+  id: todo.id,
   title: todo.title,
   completed: todo.completed,
   userId: todo.userId,
   user: getUserById(todo.userId),
 }));
 
-// Генерує новий унікальний ID для завдання
+// function
 function getNewPostId(posts: Post[]) {
-  // Знаходимо максимальний ID серед ВСІХ завдань (post.id)
   const maxId = Math.max(...posts.map(post => post.id));
 
   return maxId + 1;
 }
 
-// Тип для даних, які передаються з UserInfo
+// Type
 type AddPostData = {
   title: string;
   userId: number;
@@ -35,12 +35,12 @@ export const App = () => {
   const [posts, setPosts] = useState<Post[]>(initialTodos);
 
   const addPost = (data: AddPostData) => {
-    const newUser = getUserById(data.userId); // Отримуємо user тут
+    const newUser = getUserById(data.userId);
     const newPost: Post = {
-      id: getNewPostId(posts), // Генеруємо id тут
+      id: getNewPostId(posts),
       title: data.title,
       userId: data.userId,
-      completed: data.completed, // Використовуємо значення completed, передане з UserInfo
+      completed: data.completed,
       user: newUser,
     };
 
@@ -55,6 +55,3 @@ export const App = () => {
     </div>
   );
 };
-
-// 1) initial
-// 2) addPost
